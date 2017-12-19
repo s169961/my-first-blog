@@ -30,6 +30,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 's169961.pythonanywhere.com']
 
 # Application definition
 
+STATIC_URL = '/static/'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'djangojs',
 ]
 
 MIDDLEWARE = [

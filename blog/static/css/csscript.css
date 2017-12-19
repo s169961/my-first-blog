@@ -1,0 +1,176 @@
+header {
+  background: #31353A;background: #31353A;
+  font-weight: bold;font-weight: bold;
+  color: #FFF;color: #FFF;
+  text-align: center;
+  min-height: 50px;
+  font-size: 40px;
+}
+
+.all{
+  background-image: url(http://solopracticeuniversity.com/files/2016/12/money-rolls.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 250px 250px;
+  grid-template-rows: 500px;
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+  position: relative;
+  grid-row-gap: 50px;
+  overflow: auto;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+#mainbank, #smallbank,{
+  margin-left: 100px;
+}
+#mainbank {
+  margin-left: 100px;
+  width:250px;
+  height: 420px;
+  padding: 20px;
+  background-color: #7E8F7C;
+}
+
+#smallbank {
+  margin-left: 100px;
+  width: 360px;
+  height: 440px;
+  padding-left:20px;
+  padding-top: 20px;
+  background-color: #7E8F7C;
+}
+
+.add-button{
+  color: red;
+  cursor: pointer;
+}
+
+.input{
+  position: absolute;
+
+}
+
+button, .searchField{
+  float: right;
+}
+
+#mon, #sign{
+  display: inline;
+}
+
+ul {
+
+  margin: -5;
+  padding:0;
+  list-style-type: none;
+  width: 150px;
+  display: flex;
+  display: inline-block;
+}
+
+#add-money{
+  float: right;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background:  #31353A;
+  font-size: 18px;
+  left: 25px;
+  color: white;
+}
+
+#List{
+  margin-top: 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  float: left;
+  max-height:260px;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+.close {
+
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.header {
+  padding: inherit;
+  color: white;
+
+}
+
+
+#myInput, #myInput2, #myInput3 {
+  border: 0px;
+  width: 20%;
+  padding: 10px;
+  float: left;
+  font-size: 13px;
+
+}
+
+.addBtn {
+  padding: 8.5px;
+  width: 7%;
+  background: #d9d9d9;
+  color: #555;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+
+.history {
+  padding: 10px;
+  background: #d9d9d9;
+  color: #555;
+  float: top;
+  text-align: left;
+  font-size: 10px;
+  overflow-y: scroll;
+  max-width:230px;
+  max-height:240px;
+  float: inherit;
+  margin-top: 70px;
+}
+
+footer {
+  position: relative;
+  height: 100px;
+  background: #31353A;
+  font-size: 12px;
+  text-align: center;
+}
+footer h5 {
+  position: relative;
+  left: 50%;
+  margin-left: -400px;
+  width: 800px;
+  text-align: center;
+  font-weight: bold;
+  color: #FFF;
+}

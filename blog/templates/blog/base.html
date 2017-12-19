@@ -1,26 +1,130 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    </head>
-    <body>
-        <div class="page-header">
-          {% if user.is_authenticated %}
-          <a href="{% url 'post-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-          {% endif %}
-            <h1><a href="/">Django Girls Blog</a></h1>
+{% load staticfiles%}
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Hello, world!</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="{% static 'css/csscript.css' %}">
+  <script src="{% static 'jquery-3.2.1.min.js' %}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <div class = "all">
+    <header>EasyMoney</header>
+    <script type="text/javascript">
+    $(document).ready(
+      function(){
+        $("#jqtest").html("JQuery installed successfully!");
+      }
+
+    );
+  </script>
+  <p id="jqtest"></p>
+  <main>
+    <div id = "mainbank">
+      <script type="text/javascript">
+      $(document).ready(
+        function(){
+          $('.searchField').toggle();
+          $('.input').toggle();
+
+          var oldmoney = parseInt($('#mon').html());
+          $('.add-button').on('click', () => {
+            $('#jqtest').html("only this works")
+            $('.searchField').toggle();
+            $('.input').toggle();
+          })
+
+          $('#add-money').on('click', () => {
+            var newm = parseInt($('#searchTxt').val());
+            var newmoney = oldmoney + newm;
+            if(!(isNaN(newm))){
+              $('#mon').html(newmoney);
+              $('.history').prepend("<br/>"+ "Old balance: "+ oldmoney+"," + " Added Money: " + newm +","+" New Balance: " + newmoney)
+              oldmoney = newmoney;
+              $('.searchField').toggle();
+              $('.input').toggle();
+            }
+            else{
+              alert(`Please enter a value`);
+            }
+
+          })
+
+          $('.addBtn').on('click', () =>{
+            var thegoal = $('#myInput').val();
+            var goal = parseInt($('#myInput2').val());
+            var goals = parseInt($('#myInput3').val());
+            if ((isNaN(thegoal))&& !(isNaN(goal))&& !(isNaN(goals))){
+              $('#myUL').prepend('<li>'+ thegoal);
+              $('#myUL2').prepend('<li>' + goal+"/"+goals+"$");
+              var newm =  parseInt($('#myInput2').val());
+              var newmoney = oldmoney - newm;
+              $('#mon').html(newmoney);
+              $('.history').prepend("<br/>"+ "Old balance: "+ oldmoney+"," + " Removed Money: " + newm +","+" New Balance " + newmoney)
+              oldmoney = newmoney;
+            }
+            else{
+              alert(`Input incorrect, input a string, then number and number.`);
+            }
+          });
+        }
+      );
+      </script>
+      <h1 id = "money"> Main Account:<span></span> <span class="add-button">+</span>
+        <span>
+          <h4 id = "mon">0</h4><span>
+            <h4 id = "sign">$<h4>
+            </h2>
+          </span>
+          <div class="input">
+            <button id = "add-money">Add</button>
+            <input type="text" id ="searchTxt" class="searchField" placeholder="Enter amount of money"/>
+          </div>
+          <h4 class = "history">
+          </h4>
         </div>
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
+        <div id = "smallbank">
+          <h1>Saving Goals</h1>
+          <div id = "myDIV" class="header">
+            <span>
+              <input type="text" id ="myInput" placeholder="Goal">
+              <input type="text" id ="myInput2" placeholder="Current $">
+              <input type="text" id ="myInput3" placeholder="Needed $">
+            </span>
+            <span onclick="newElement()" class="addBtn">Add</span>
+          </div>
+          <div = id = "List">
+            <span>
+              <ul id ="myUL">
+
+              </ul>
+              <ul id ="myUL2">
+
+              </ul>
+            </span>
+          </div>
         </div>
+      </main>
+    </div>
+    <footer>
+
+      <br></br>
+      <h5> Made For Web Technology
+      </footer>
+
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="{% static "js/javascript.js" %}"></script>
+    
     </body>
-</html>
+    </html>
